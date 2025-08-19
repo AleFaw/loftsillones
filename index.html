@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loft Sillón | Diseño y confort para tu hogar</title>
+  <meta name="description" content="Sillones de diseño a medida. Telas premium, entrega rápida y atención personalizada. Loft Sillón." />
+  <meta name="author" content="Loft Sillón" />
+  <meta property="og:title" content="Loft Sillón" />
+  <meta property="og:description" content="Sillones de diseño a medida. Telas premium, entrega rápida y atención personalizada." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1549187774-b4e9b0445b41?q=80&w=1200&auto=format&fit=crop" />
+  <meta name="theme-color" content="#111827" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f6cb.svg" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-p3VffS3P4V7xk8q5c0mW6YHq0yFzsgq3u7eYg1X8Ck0e9F3mOQy0H3v3dI6Yy7jv0pXzqYw6l6dJ9f1rQbK4iw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Lugrasimo&family=Parisienne&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #111827; /* gris-azulado profundo */
+      --accent: #c8a97e; /* dorado suave */
+      --light: #f7f7f7;
+      --text: #1f2937;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+    }
+    /* Navbar */
+    .navbar {
+      backdrop-filter: saturate(1.2) blur(8px);
+      background: rgba(255,255,255,0.85) !important;
+      box-shadow: 0 1px 10px rgba(0,0,0,.06);
+    }
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+    .nav-link.active { color: var(--accent) !important; }
+
+    .lugrasimo-regular {
+        font-family: "Lugrasimo", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    .navbar-brand span {
+        font-family: 'Lugrasimo', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color:rgb(194, 160, 37);
+    }
+
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: grid;
+      place-items: center;
+      background: linear-gradient( to bottom right, rgba(17,24,39,.75), rgba(17,24,39,.35) ),
+        url('./assets/img/fondo.jpeg') center/cover no-repeat;
+      color: #fff;
+    }
+    .hero .content { max-width: 900px; }
+    .tag {
+      display: inline-block;
+      padding: .35rem .7rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      font-size: .85rem;
+    }
+
+    /* Section spacing */
+    section { padding: 80px 0; }
+    @media (max-width: 576px){ section { padding: 64px 0; } }
+    .section-title {
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+    .section-sub { color: #6b7280; }
+
+    /* Cards */
+    .product-card {
+      transition: transform .25s ease, box-shadow .25s ease;
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,.06);
+    }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,.08); }
+    .product-card img { aspect-ratio: 4/3; object-fit: cover; }
+    .badge-accent { background: var(--accent); }
+
+    /* Steps */
+    .step { display:flex; gap:14px; align-items:flex-start; }
+    .step .num {
+      width: 36px; height: 36px; flex: 0 0 36px; border-radius: 50%;
+      display:grid; place-items:center; background: var(--brand); color:#fff; font-weight:700;
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 24px;
+      height: 100%;
+    }
+
+    /* Contact */
+    .contact-card {
+      border: none; border-radius: 16px; box-shadow: 0 6px 24px rgba(0,0,0,.06);
+    }
+
+    /* Footer */
+    footer { background:#0b1220; color:#cbd5e1; }
+    footer a { color:#cbd5e1; text-decoration:none; }
+    footer a:hover { color:#fff; }
+
+    /* Anchor offset for sticky navbar */
+    :target { scroll-margin-top: 90px; }
+
+    .product-card img {
+        max-height: 200px;   /* ajustá la altura máxima */
+        object-fit: contain; /* mantiene proporciones y muestra la imagen completa */
+        padding: 10px;       /* opcional, para que no toque los bordes */
+    }
+
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#nav" data-bs-smooth-scroll="true" tabindex="0">
+  <!-- Navbar -->
+  <nav id="nav" class="navbar navbar-expand-lg sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+        <img src="assets/img/logo.jpg" alt="Logo Loft Sillón" style="margin-right: 10px; width: 70px; height: auto; border-radius: 50%;">
+        <i class="bi bi-couch" style="color: var(--accent);"></i>
+        <span class="fw-bold fst-italic">Loft Sillónes</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#modelos">Modelos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#personalizacion">Personalización</a></li>
+          <li class="nav-item"><a class="nav-link" href="#opiniones">Opiniones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#porqueelegirnos">Por qué elegirnos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-dark rounded-pill px-3" href="https://wa.me/5491112345678?text=Hola!%20Quiero%20asesoramiento%20sobre%20sillones" target="_blank" rel="noopener">
+              <i class="bi bi-whatsapp me-1"></i> WhatsApp
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="inicio" class="hero">
+    <div class="container">
+      <div class="content text-center" data-aos="fade-up" data-aos-duration="900">
+        <span class="tag mb-3">Fabricación a medida • Garantía oficial</span>
+        <h1 class="display-4 fw-bold mt-3"> ¡Dale un nuevo estilo a tu hogar con Loft Sillones!</h1>
+        <p class="lead mt-3 mb-4">Descubrí el equilibrio perfecto entre diseño y confort con nuestro nuevo sillón. Tapizado en tela premium, patas metálicas o de madera y líneas modernas, transforma tu living en un espacio de relax y sofisticación.</p>
+        <div class="d-flex gap-2 justify-content-center">
+          <a href="#modelos" class="btn btn-light btn-lg rounded-pill px-4">Ver modelos</a>
+          <a href="#contacto" class="btn btn-outline-light btn-lg rounded-pill px-4">Pedir presupuesto</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Modelos -->
+  <section id="modelos">
+    <div class="container">
+      <div class="row align-items-end mb-4">
+        <div class="col-lg-8" data-aos="fade-right"><h2 class="section-title">Modelos destacados</h2><p class="section-sub">Elegí el estilo que mejor se adapta a tu espacio. Todos pueden personalizarse.</p></div>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0" data-aos="fade-left">
+          <a href="#contacto" class="btn btn-outline-dark rounded-pill">Consultar por catálogo completo</a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-12 col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="50">
+          <div class="card product-card h-100">
+            <img src="./assets/img/modelos/italiano.png" class="card-img-top" alt="Sillón Italiano + Camastro" loading="lazy">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="card-title mb-0">Italiano + Camastro</h5>
+                <span class="badge badge-accent">Nuevo</span>
+              </div>
+              <p class="card-text">Elegante y acogedor, con respaldo mullido y chaise longue. Perfecto para relajarse en familia o con amigos.</p>
+              <a href="#contacto" class="stretched-link">Consultar</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-12 col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card product-card h-100">
+            <img src="./assets/img/modelos/verona.png" class="card-img-top" alt="Sillón Verona" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Verona</h5>
+              <p class="card-text">Sofisticado y versátil, pensado para espacios amplios. Su diseño modular permite adaptarlo a diferentes ambientes.</p>
+              <a href="#contacto" class="stretched-link">Consultar</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-12 col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="150">
+          <div class="card product-card h-100">
+            <img src="./assets/img/modelos/cubo.png" class="card-img-top" alt="Sillón Cubo" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Cubo</h5>
+              <p class="card-text">Diseño moderno y minimalista, con líneas rectas y cojines firmes. Ideal para departamentos y espacios con estilo actual.</p>
+              <a href="#contacto" class="stretched-link">Consultar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personalización -->
+  <section id="personalizacion" style="background: var(--light)">
+    <div class="container">
+      <div class="row justify-content-center mb-4">
+        <div class="col-lg-8 text-center" data-aos="fade-up">
+          <h2 class="section-title">Personalizá tu sillón</h2>
+          <p class="section-sub">Medidas, telas y colores a tu gusto. Te asesoramos en cada paso.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-right">
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <h5>Elegí el modelo</h5>
+              <p class="mb-0">Definí la base: Italiano, Verona o Cubo.</p>
+            </div>
+          </div>
+          <hr>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <h5>Medidas a medida</h5>
+              <p class="mb-0">Adaptamos ancho, profundidad y altura a tu espacio.</p>
+            </div>
+          </div>
+          <hr>
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <h5>Telas y colores</h5>
+              <p class="mb-0">Antimanchas, lino, pana, cuero ecológico y más de 50 colores.</p>
+            </div>
+          </div>
+          <hr>
+          <div class="step">
+            <div class="num">4</div>
+            <div>
+              <h5>Entrega y garantía</h5>
+              <p class="mb-0">Envío coordinado y garantía por defectos de fabricación.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="card contact-card">
+            <div class="card-body p-4">
+              <h5 class="mb-3">Pedí tu presupuesto</h5>
+              <form class="row g-3" onsubmit="return handleSubmit(event)">
+                <div class="col-12">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input type="text" id="nombre" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="telefono" class="form-label">Teléfono</label>
+                  <input type="tel" id="telefono" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="modelo" class="form-label">Modelo de interés</label>
+                  <select id="modelo" class="form-select">
+                    <option>Italiano + Camastro</option>
+                    <option>Verona</option>
+                    <option>Cubo</option>
+                    <option>Otro</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="mensaje" class="form-label">Mensaje</label>
+                  <textarea id="mensaje" rows="3" class="form-control" placeholder="Contanos medidas aproximadas, telas o colores…"></textarea>
+                </div>
+                <div class="col-12 d-grid d-md-flex gap-2">
+                  <button class="btn btn-dark" type="submit"><i class="bi bi-send me-1"></i>Enviar</button>
+                  <a id="btnWsp" class="btn btn-outline-dark" target="_blank" rel="noopener" href="https://wa.me/54911601645269?text=Hola!%20Quiero%20un%20presupuesto%20para%20un%20sill%C3%B3n."><i class="bi bi-whatsapp me-1"></i> WhatsApp</a>
+                </div>
+              </form>
+              <small class="text-body-secondary d-block mt-2">Al enviar aceptás nuestra política de privacidad.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Opiniones -->
+  <section id="opiniones">
+    <div class="container">
+      <div class="row justify-content-center mb-4">
+        <div class="col-lg-8 text-center" data-aos="fade-up">
+          <h2 class="section-title">Opiniones de clientes</h2>
+          <p class="section-sub">Lo que dicen quienes ya eligieron Loft Sillón.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+          <div class="testimonial h-100">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <img src="https://i.pravatar.cc/80?img=15" class="rounded-circle" width="48" height="48" alt="Cliente" loading="lazy">
+              <div>
+                <strong>María</strong>
+                <div class="text-warning small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              </div>
+            </div>
+            <p class="mb-0">“Excelente calidad y terminación. Llegó antes de lo previsto y quedó perfecto en el living.”</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial h-100">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <img src="https://i.pravatar.cc/80?img=21" class="rounded-circle" width="48" height="48" alt="Cliente" loading="lazy">
+              <div>
+                <strong>Lucas</strong>
+                <div class="text-warning small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              </div>
+            </div>
+            <p class="mb-0">“Nos asesoraron con las telas y quedó increíble. Súper cómodo y fácil de limpiar.”</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial h-100">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <img src="https://i.pravatar.cc/80?img=12" class="rounded-circle" width="48" height="48" alt="Cliente" loading="lazy">
+              <div>
+                <strong>Sofía</strong>
+                <div class="text-warning small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              </div>
+            </div>
+            <p class="mb-0">“El esquinero modular nos cambió el espacio. Volvería a comprar sin dudar.”</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué elegirnos -->
+  <section id="porqueelegirnos" style="background: var(--light)">
+    <div class="container">
+      <div class="row justify-content-center mb-4">
+        <div class="col-lg-8 text-center" data-aos="fade-up">
+          <h2 class="section-title">Por qué elegir Loft Sillón</h2>
+          <p class="section-sub">Beneficios que hacen la diferencia.</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-6 col-lg-3" data-aos="flip-up">
+          <div class="text-center p-3 h-100">
+            <i class="bi bi-award fs-1" style="color: var(--accent);"></i>
+            <h6 class="mt-2">Calidad Premium</h6>
+            <p class="small mb-0">Estructuras reforzadas y tapizados de primera.</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3" data-aos="flip-up" data-aos-delay="100">
+          <div class="text-center p-3 h-100">
+            <i class="bi bi-sliders fs-1" style="color: var(--accent);"></i>
+            <h6 class="mt-2">A medida</h6>
+            <p class="small mb-0">Personalización total en medidas y telas.</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3" data-aos="flip-up" data-aos-delay="200">
+          <div class="text-center p-3 h-100">
+            <i class="bi bi-truck fs-1" style="color: var(--accent);"></i>
+            <h6 class="mt-2">Entrega Segura</h6>
+            <p class="small mb-0">Envíos coordinados y protegidos.</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3" data-aos="flip-up" data-aos-delay="300">
+          <div class="text-center p-3 h-100">
+            <i class="bi bi-shield-check fs-1" style="color: var(--accent);"></i>
+            <h6 class="mt-2">Garantía</h6>
+            <p class="small mb-0">Cobertura por defectos de fabricación.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h2 class="section-title">Contacto</h2>
+          <p class="section-sub mb-4">Escribinos y te asesoramos en minutos.</p>
+          <div class="d-flex flex-column gap-2">
+            <div><i class="bi bi-telephone me-2"></i><a href="tel:+5491112345678">+54 9 11 6016-4529</a></div>
+            <div><i class="bi bi-envelope me-2"></i><a href="mailto:contacto@loftsillon.com">contacto@loftsillon.com</a></div>
+            <div><i class="bi bi-geo-alt me-2"></i> Av. Ejemplo 123, CABA</div>
+            <div class="mt-3 d-flex gap-2">
+              <a class="btn btn-dark rounded-pill" target="_blank" rel="noopener" href="https://wa.me/5491160164529?text=Hola!%20Vengo%20desde%20la%20web%20y%20quiero%20asesoramiento."><i class="bi bi-whatsapp me-1"></i> WhatsApp</a>
+              <a class="btn btn-outline-dark rounded-pill" href="#modelos">Ver modelos</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow-sm">
+            <!-- Map placeholder (replace src with your real map embed) -->
+            <iframe title="Mapa Loft Sillón" loading="lazy" allowfullscreen
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.9999999999995!2d-58.381559!3d-34.603684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sObelisco!5e0!3m2!1ses-419!2sar!4v1680000000000"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-couch" style="color: var(--accent);"></i>
+            <strong>Loft Sillón</strong>
+          </div>
+          <small class="text-secondary">© <span id="year"></span> Loft Sillón. Todos los derechos reservados.</small>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a class="me-3" href="#inicio">Inicio</a>
+          <a class="me-3" href="#modelos">Modelos</a>
+          <a class="me-3" href="#personalizacion">Personalización</a>
+          <a class="me-3" href="#contacto">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-BK1W9Z0Sqk9pQk4fV5q4Gpfm8n9V4qL5xYy8uQ9f8X3yqXqk3c3v8R3FJwzYx2V1h5k8b6o8sM6x+TgX4p5Zjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // Init AOS
+    AOS.init({ once: true, offset: 80, duration: 700, easing: 'ease-out' });
+
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple form handler -> open WhatsApp with prefilled text
+    function handleSubmit(e){
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const tel = document.getElementById('telefono').value.trim();
+      const modelo = document.getElementById('modelo').value;
+      const mensaje = document.getElementById('mensaje').value.trim();
+      const texto = encodeURIComponent(`Hola! Soy ${nombre}. Tel: ${tel}.\nMe interesa el modelo: ${modelo}.\n${mensaje ? 'Detalle: ' + mensaje : ''}`);
+      const numero = '5491112345678'; // TODO: reemplazar por el número real
+      window.open(`https://wa.me/${numero}?text=${texto}`, '_blank');
+      return false;
+    }
+
+    // Activate ScrollSpy after load (ensures proper offset with sticky nav)
+    const dataSpyList = [].slice.call(document.querySelectorAll('[data-bs-spy="scroll"]'))
+    dataSpyList.forEach(function (dataSpyEl) {
+      bootstrap.ScrollSpy.getInstance(dataSpyEl) || new bootstrap.ScrollSpy(dataSpyEl, { target: '#nav', offset: 100 })
+    })
+  </script>
+</body>
+</html>
